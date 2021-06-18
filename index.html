@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Clicks</title>
+    <style>
+        div#main{
+            background-color: red;
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            border-radius: 300px;
+            font-size: 25px;
+            color: white;
+            font: normal Arial;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -150px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="main">
+Passe o mouse sobre mim!
+</div>
+
+<script>
+    var circulo = document.getElementById('main')
+    var contador = 0
+    circulo.addEventListener("mouseenter",sobremouse)
+    circulo.addEventListener("mouseout",foradomouse)
+    circulo.addEventListener("click",clickbotao)
+    function sobremouse(){
+        circulo.innerHTML = "Clicke!"
+    }
+    function clickbotao(){
+        contador++
+        circulo.innerHTML = contador
+    }
+    function foradomouse(){
+        circulo.innerHTML = "Passe o mouse sobre mim!"
+        circulo.innerHTML = "Seu numero de Clicks: " + contador
+    }
+
+</script>
+</body>
+
+</html>
